@@ -171,8 +171,28 @@ public class Exercises {
 	}
 
 	public int clumps(ArrayList<String> values) {
-		// write your code here
+		if (values == null) {
+			return -1;
+		}
+		for (String i : values) {
+			if (i == null) {
+				return -1;
+			}
+		}
 
-		return -1;		// default return value to ensure compilation
+		int count = 0;
+		String lastValue = "";
+		for (int i = 0; i < values.length - 1; i++) {
+			if (values.length > 1) {
+				if ((values[i].equals(values[i + 1])) && !(values[i].equals(lastValue))) {
+					count++;
+					lastValue = values[i];
+				}
+		} else {
+			return 0;
+		}
+		}
+
+		return count;
 	}
 }
