@@ -15,32 +15,43 @@ public class Exercises {
 	}
 
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
-		ArrayList<String> emptyList = new ArrayList();
-        if (values == null || values.isEmpty() || n < 0 || values.size() < n) {
-            return emptyArrayList;
-        }
+    ArrayList<String> emptyList = new ArrayList();
+    if (values == null || values.isEmpty() || n < 0 || values.size() < n) {
+        return emptyList;
+    }
 
-        ArrayList<String> newList = new ArrayList();
-        int backCount = n;
+    ArrayList<String> newList = new ArrayList();
 
-        // go from first index until nth index
-        for (int i = 0; i < n; i++) {
-            newList.add(values.get(i));
-        }
+    for (int i = 0; i < n; i++) {
+        newList.add(values.get(i));
+    }
 
-        // go from length - nth index until last index
-        for (int i = n; i < n * 2; i++) {
-            newList.add(values.get(values.size() - backCount));
-            backCount--;
-        }
+		 int backCount = n;
+    for (int i = n; i < n * 2; i++) {
+        newList.add(values.get(values.size() - backCount));
+        backCount--;
+    }
 
-        return newList;
-	}
+    return newList;
+  }
 
 	public int difference(ArrayList<Integer> numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 1) {
+			return -1;
+		}
+		int min = numbers[0];
+		int max = numbers[0];
 
-		return -1;		// default return value to ensure compilation
+		for (int i : numbers) {
+			if (i < min) {
+				min = i;
+			}
+			if (i > max) {
+				max = i;
+			}
+		}
+
+		return max - min;
 	}
 
 	public double biggest(ArrayList<Double> numbers) {
