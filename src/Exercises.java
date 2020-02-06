@@ -36,18 +36,18 @@ public class Exercises {
   }
 
 	public int difference(ArrayList<Integer> numbers) {
-		if (numbers == null || numbers.length < 1) {
+		if (numbers == null || numbers.size() < 1 || numbers.isEmpty()) {
 			return -1;
 		}
-		int min = numbers[0];
-		int max = numbers[0];
+		int min = numbers.get(0);
+		int max = numbers.get(0);
 
-		for (int i : numbers) {
-			if (i < min) {
-				min = i;
+		for (int i = 0; i < numbers.size(); i++) {
+			if (numbers.get(i) < min) {
+				min = numbers.get(i);
 			}
-			if (i > max) {
-				max = i;
+			if (numbers.get(i) > max) {
+				max = numbers.get(i);
 			}
 		}
 
