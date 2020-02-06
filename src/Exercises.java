@@ -16,23 +16,25 @@ public class Exercises {
 
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
 		ArrayList<String> emptyList = new ArrayList();
-		if (values == null || n < 0 || values.size() < n) {
-			return emptyList;
-		}
+        if (values == null || values.isEmpty() || n < 0 || values.size() < n) {
+            return emptyArrayList;
+        }
 
-		ArrayList<String> newList = new ArrayList();
+        ArrayList<String> newList = new ArrayList();
+        int backCount = n;
 
-		for (int i = 0; i < n; i++) {
-			newList.add(values.get(i))
-		}
+        // go from first index until nth index
+        for (int i = 0; i < n; i++) {
+            newList.add(values.get(i));
+        }
 
-		int backCount = n;
-		for (int j = n; j < n * 2; j++) {
-			newList.add(values.get(values.size() - backCount));
-			backCount--;
-		}
+        // go from length - nth index until last index
+        for (int i = n; i < n * 2; i++) {
+            newList.add(values.get(values.size() - backCount));
+            backCount--;
+        }
 
-		return newList;
+        return newList;
 	}
 
 	public int difference(ArrayList<Integer> numbers) {
