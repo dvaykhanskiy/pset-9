@@ -3,15 +3,15 @@ import java.util.ArrayList;
 public class Exercises {
 
 	public boolean commonEnd(ArrayList<Integer> a, ArrayList<Integer> b) {
-		if (a == null || a.length == 0 || b == null || b.length == 0) {
-			return false;
-		} else {
-			if ((a[0] == b[0]) || (a[a.length - 1] == b[b.length - 1])) {
-				return true;
-			} else {
-				return false;
-			}
-		}
+		if (a == null || a.isEmpty() || b == null || b.isEmpty()) {
+            return false;
+        }
+
+        if ((a.get(0) == b.get(0)) || ( a.get(a.size()-1) == b.get(b.size()-1)) ) {
+            return true;
+        }
+
+        return false;
 	}
 
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
