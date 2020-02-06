@@ -83,23 +83,24 @@ public class Exercises {
 }
 
 	public ArrayList<String> middle(ArrayList<String> values) {
-		String emptyString[] = new String[0];
-		if (values == null  || values.length % 2 == 0 || values.length < 3) {
-			return emptyString;
+		if (values == null || values.size() < 3 || values.size() % 2 == 0) {
+			return new ArrayList<String>();
 		}
-		for (String i : values) {
-			if (i == null) {
-				return emptyString;
+
+		for (int i = 0; i < values.size(); i++) {
+			if (values.get(i) == null) {
+				return new ArrayList<String>();
 			}
 		}
 
-		String newString[] = new String[3];
-		for (int i = 0; i < 3; i++) {
-			newString[i] = values[((values.length + 1) / 2) - 2 + i];
-		}
+		int middle = (int)(Math.ceil(values.size() / 2));
+		ArrayList<String> numbers = new ArrayList<String>();
 
+		numbers.add(values.get(middle - 1));
+		numbers.add(values.get(middle));
+		numbers.add(values.get(middle + 1));
 
-		return newString;
+		return numbers;
 	}
 
 	public boolean increasing(ArrayList<Integer> numbers) {
