@@ -104,12 +104,12 @@ public class Exercises {
 	}
 
 	public boolean increasing(ArrayList<Integer> numbers) {
-		if (numbers ==  null || numbers.length < 3) {
+		if (numbers ==  null || numbers.size() < 3) {
 			return false;
 		}
 
-		for (int i = 1; i < numbers.length; i++) {
-			if (numbers[i] > numbers[i - 1] && numbers[i] < numbers[i + 1]) {
+		for (int i = 1; i < numbers.size(); i++) {
+			if (numbers.get(i) > numbers.get(i - 1) && numbers.get(i) < numbers.get(i + 1)) {
 				return true;
 			}
 		}
