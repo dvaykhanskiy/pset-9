@@ -174,19 +174,19 @@ public class Exercises {
 		if (values == null) {
 			return -1;
 		}
-		for (String i : values) {
-			if (i == null) {
+		for (int i = 0; i < values.size(); i++) {
+			if (values.get(i) == null) {
 				return -1;
 			}
 		}
 
 		int count = 0;
 		String lastValue = "";
-		for (int i = 0; i < values.length - 1; i++) {
-			if (values.length > 1) {
-				if ((values[i].equals(values[i + 1])) && !(values[i].equals(lastValue))) {
+		for (int i = 0; i < values.size() - 1; i++) {
+			if (values.size() > 1) {
+				if ((values.get(i).equals(values.get(i + 1))) && !(values.get(i).equals(lastValue))) {
 					count++;
-					lastValue = values[i];
+					lastValue = values.get(i);
 				}
 		} else {
 			return 0;
