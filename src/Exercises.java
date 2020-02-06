@@ -15,24 +15,24 @@ public class Exercises {
 	}
 
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
-		ArrayList<String> emptyString = new ArrayList();
+		ArrayList<String> emptyList = new ArrayList();
 		if (values == null || n < 0 || values.size() < n) {
-			return emptyString;
+			return emptyList;
 		}
 
-		ArrayList<String> newString = new ArrayList(n * 2);
+		ArrayList<String> newList = new ArrayList();
 
 		for (int i = 0; i < n; i++) {
-			newString.get(i) = values.get(i);
+			newList.add(values.get(i))
 		}
 
 		int backCount = n;
 		for (int j = n; j < n * 2; j++) {
-			newString.get(j) = values.get(values.size() - backCount);
+			newList.add(values.get(values.size() - backCount));
 			backCount--;
 		}
 
-		return newString;
+		return newList;
 	}
 
 	public int difference(ArrayList<Integer> numbers) {
