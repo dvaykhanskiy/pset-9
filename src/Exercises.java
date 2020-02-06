@@ -149,9 +149,25 @@ public class Exercises {
 	}
 
 	public boolean balance(ArrayList<Integer> numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 2) {
+			return false;
+		}
 
-		return false;	// default return value to ensure compilation
+		for (int i = 0; i < numbers.length; i++) {
+			int sumLeft = 0;
+			int sumRight = 0;
+			for (int j = 0; j < i; j++) {
+				sumLeft += numbers[j];
+			}
+			for (int k = i; k < numbers.length; k++) {
+				sumRight += numbers[k];
+			}
+			if (sumLeft == sumRight) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	public int clumps(ArrayList<String> values) {
