@@ -65,18 +65,18 @@ public class Exercises {
       }
   	}
 
-  	double firstElement = numbers.get(0);
-  	double lastElement = numbers.get(numbers.size() - 1);
-  	double middleElement = numbers.get(numbers.size() / 2);
+  	double firstNumber = numbers.get(0);
+  	double lastNumber = numbers.get(numbers.size() - 1);
+  	double middleNumber = numbers.get(numbers.size() / 2);
 
-  	if (firstElement > lastElement && firstElement > middleElement) {
-      return firstElement;
-  	} else if (lastElement > middleElement && lastElement > firstElement) {
-      return lastElement;
-  	} else if (middleElement > lastElement && middleElement > firstElement) {
-      return middleElement;
-  	} else if (middleElement == lastElement && middleElement == firstElement) {
-      return firstElement;
+  	if (firstNumber > lastNumber && firstNumber > middleNumber) {
+      return firstNumber;
+  	} else if (lastNumber > middleNumber && lastNumber > firstNumber) {
+      return lastNumber;
+  	} else if (middleNumber > lastNumber && middleNumber > firstNumber) {
+      return middleNumber;
+  	} else if (middleNumber == lastNumber && middleNumber == firstNumber) {
+      return firstNumber;
   	}
 
   	return -1;        // default return value to ensure compilation
